@@ -1,0 +1,53 @@
+[
+    {       "_id": "1",
+            "name": "Tourism Management",
+            "live": "https://tourism-management-websi-1ab3e.web.app/",
+            "image":"https://i.ibb.co/fHhtvMQ/Screenshot3.png",
+            "description": "A comprehensive platform for managing tourism services, including travel packages, bookings, and customer support.",
+            "technologies": ["HTML", "CSS", "JavaScript", "React", "Node.js", "ExpressJs", "Firebase", "MongoDB"],
+            "features": [
+                "1.Travel package creation and management",
+                "User registration and authentication",
+                "Booking and payment integration",
+                "Customer support chat",
+                "Admin dashboard for managing services"
+            ],
+            "repository": "https://github.com/tahmidajakia/tourism-management-client"
+            
+        
+    },
+    {           "_id": "2",
+                "name": "Online Group Study",
+                "image":"https://i.ibb.co/QKr1nkY/Screenshot4.png",
+                "live": "https://online-study-group-assignment.web.app/",
+                "description": "A platform for creating and managing online study groups, including features for chat, file sharing, and collaborative document editing.",
+                "technologies": ["HTML", "CSS", "JavaScript", "React", "Node.js", "ExpressJs", "Firebase", "MongoDB"],
+                "features": [
+                    "Group creation and management",
+                    "Real-time chat",
+                    "File sharing",
+                    "Collaborative document editing",
+                    "User profiles and activity tracking"
+                ],
+                "repository": "https://github.com/tahmidajakia/online-study-group-client"
+        
+    },
+    {
+                "_id": "3",
+                "name": "Apartment Booking",
+                "image":"https://i.ibb.co/GCccFrq/Screenshot6.png",
+                "live": "https://hotel-apartment.web.app/",
+                "description": "A web application for booking apartments, with features for searching, filtering, and booking available properties.",
+                "technologies": ["HTML", "CSS", "JavaScript", "React", "Node.js", "ExpressJs", "Firebase", "MongoDB"],
+                "features": [
+                    "Property search and filter",
+                    "Detailed property listings",
+                    "User authentication and profiles",
+                    "Booking and payment processing",
+                    "Admin panel for property management"
+                ],
+                "repository": "https://github.com/tahmidajakia/apartment-booking-client"
+            
+    }
+    
+]
