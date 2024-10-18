@@ -45,7 +45,7 @@ const Header = () => {
                 activeClass="active"
                 smooth={true}
                 spy={true}
-                className="text-white hover:text-primary duration-500"
+                className="text-white hover:text-purple-700 duration-500"
               >
                 {link.name}
               </Link>
