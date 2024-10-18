@@ -22,7 +22,7 @@ const ProjectsCard = ({ project }) => {
                 View Details
               </button>
             </div>
-            <dialog id={`modal_${name}`} className="modal">
+            <dialog id={`modal_${name}`} className="modal text-black">
               <div className="modal-box">
                 <form method="dialog">
                   <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
