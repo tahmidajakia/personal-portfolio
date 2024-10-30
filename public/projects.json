@@ -1,8 +1,8 @@
 [
     {       "_id": "1",
             "name": "Tourism Management",
-            "live": "https://tourism-management-websi-1ab3e.web.app/",
-            "image":"https://i.ibb.co/fHhtvMQ/Screenshot3.png",
+            "live": "https://foodie-client-314a6.web.app/",
+            "image":"https://i.ibb.co.com/8sM4ncV/foodie2.png",
             "description": "A comprehensive platform for managing tourism services, including travel packages, bookings, and customer support.",
             "technologies": ["HTML", "CSS", "JavaScript", "React", "Node.js", "ExpressJs", "Firebase", "MongoDB"],
             "features": [
@@ -12,7 +12,8 @@
                 "Customer support chat",
                 "Admin dashboard for managing services"
             ],
-            "repository": "https://github.com/tahmidajakia/tourism-management-client"
+            "repository1": "https://github.com/tahmidajakia/foodie-client",
+            "repository2": "https://github.com/tahmidajakia/demo-foodie-server"
             
         
     },
@@ -29,7 +30,8 @@
                     "Collaborative document editing",
                     "User profiles and activity tracking"
                 ],
-                "repository": "https://github.com/tahmidajakia/online-study-group-client"
+                "repository1": "https://github.com/tahmidajakia/online-study-group-client",
+                "repository2": "https://github.com/tahmidajakia/online-study-group-server"
         
     },
     {
@@ -46,7 +48,9 @@
                     "Booking and payment processing",
                     "Admin panel for property management"
                 ],
-                "repository": "https://github.com/tahmidajakia/apartment-booking-client"
+                "repository1": "https://github.com/tahmidajakia/apartment-booking-client",
+            
+                "repository2": "https://github.com/tahmidajakia/apartment-booking-server"
             
     }
     
