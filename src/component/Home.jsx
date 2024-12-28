@@ -82,7 +82,7 @@ const Home = () => {
             </motion.div>
 
             {/* CV Download Button */}
-            <motion.div
+            {/* <motion.div
               variants={fadeIn("up", 0.7)}
               initial="hidden"
               whileInView="show"
@@ -98,7 +98,7 @@ const Home = () => {
                   MY CV <FaDownload />
                 </a>
               </button>
-            </motion.div>
+            </motion.div> */}
           </div>
 
           {/* Image */}

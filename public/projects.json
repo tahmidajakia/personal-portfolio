@@ -1,6 +1,6 @@
 [
     {       "_id": "1",
-            "name": "Tourism Management",
+            "name": "Foodie",
             "live": "https://foodie-client-314a6.web.app/",
             "image":"https://i.ibb.co.com/8sM4ncV/foodie2.png",
             "description": "A comprehensive platform for managing tourism services, including travel packages, bookings, and customer support.",
@@ -18,8 +18,8 @@
         
     },
     {           "_id": "2",
-                "name": "Online Group Study",
-                "image":"https://i.ibb.co/QKr1nkY/Screenshot4.png",
+                "name": "Yoga Master",
+                "image":"https://i.ibb.co.com/8YmpBr5/Screenshot-100.png",
                 "live": "https://online-study-group-assignment.web.app/",
                 "description": "A platform for creating and managing online study groups, including features for chat, file sharing, and collaborative document editing.",
                 "technologies": ["HTML", "CSS", "JavaScript", "React", "Node.js", "ExpressJs", "Firebase", "MongoDB"],
@@ -30,15 +30,15 @@
                     "Collaborative document editing",
                     "User profiles and activity tracking"
                 ],
-                "repository1": "https://github.com/tahmidajakia/online-study-group-client",
-                "repository2": "https://github.com/tahmidajakia/online-study-group-server"
+                "repository1": "https://github.com/tahmidajakia/yoga-master-client",
+                "repository2": "https://github.com/tahmidajakia/yoga-master-server"
         
     },
     {
                 "_id": "3",
                 "name": "Apartment Booking",
-                "image":"https://i.ibb.co/GCccFrq/Screenshot6.png",
-                "live": "https://hotel-apartment.web.app/",
+                "image":"https://i.ibb.co.com/SNsqRFx/Screenshot-129.png",
+                "live": "https://dream-destiny-7b463.web.app/",
                 "description": "A web application for booking apartments, with features for searching, filtering, and booking available properties.",
                 "technologies": ["HTML", "CSS", "JavaScript", "React", "Node.js", "ExpressJs", "Firebase", "MongoDB"],
                 "features": [
@@ -48,9 +48,9 @@
                     "Booking and payment processing",
                     "Admin panel for property management"
                 ],
-                "repository1": "https://github.com/tahmidajakia/apartment-booking-client",
+                "repository1": "https://github.com/tahmidajakia/dream-destiny-client",
             
-                "repository2": "https://github.com/tahmidajakia/apartment-booking-server"
+                "repository2": "https://github.com/tahmidajakia/dream-destiny-server"
             
     }
     

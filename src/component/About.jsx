@@ -2,7 +2,7 @@ import about from "../assets/images/aboutme.jpg";
 import { FaPhoneAlt, FaUser } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
-import resume from "../assets/images/B9 A10 Type-01 Requirements.pdf";
+import resume from "../assets/images/Tahmida Jakia Fron End Developer (7).pdf";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import { div } from "framer-motion/client";
@@ -85,9 +85,13 @@ const AboutMe = () => {
               </div>
             </div>
             <div className="flex gap-3">
-              <button className="btn transition-all duration-500 bg-white py-2 rounded text-purple-700 hover:bg-purple-700 hover:text-white mt-6">
-                HIRE ME
-              </button>
+              <a
+                href={resume}
+                download="Resume"
+                className="btn transition-all duration-500 bg-purple-700 py-2 rounded text-white hover:bg-white hover:text-purple-700 mt-6"
+              >
+                Resume
+              </a>
             </div>
           </motion.div>
         </div>
