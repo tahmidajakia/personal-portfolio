@@ -1,123 +1,130 @@
-import React from "react";
-import { motion } from "framer-motion"; // Ensure motion is imported
-import img2 from "../assets/img2.png";
-import {
-  FaGithub,
-  FaFacebook,
-  FaLinkedin,
-  FaInstagram,
-  FaTwitter,
-  FaDownload,
-} from "react-icons/fa";
-import { TypeAnimation } from "react-type-animation";
-import resume from "../assets/images/B9 A10 Type-01 Requirements.pdf";
-import { fadeIn } from "../variants";
+import { useState, useEffect } from "react";
+import headerImg from "../assets/images/header-img.svg";
+import bannerBg from "../assets/images/banner-bg.png";
+import { ArrowRightCircle } from "react-bootstrap-icons";
+import "animate.css";
+import TrackVisibility from "react-on-screen";
 
-const Home = () => {
+export const Home = () => {
+  const [loopNum, setLoopNum] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [text, setText] = useState("");
+  const [delta, setDelta] = useState(300 - Math.random() * 100);
+  const [index, setIndex] = useState(1);
+  const toRotate = ["Web Developer", "Web Developer", "Web Developer"];
+  const period = 2000;
+
+  useEffect(() => {
+    let ticker = setInterval(() => {
+      tick();
+    }, delta);
+
+    return () => {
+      clearInterval(ticker);
+    };
+  }, [text]);
+
+  const tick = () => {
+    let i = loopNum % toRotate.length;
+    let fullText = toRotate[i];
+    let updatedText = isDeleting
+      ? fullText.substring(0, text.length - 1)
+      : fullText.substring(0, text.length + 1);
+
+    setText(updatedText);
+
+    if (isDeleting) {
+      setDelta((prevDelta) => prevDelta / 2);
+    }
+
+    if (!isDeleting && updatedText === fullText) {
+      setIsDeleting(true);
+      setIndex((prevIndex) => prevIndex - 1);
+      setDelta(period);
+    } else if (isDeleting && updatedText === "") {
+      setIsDeleting(false);
+      setLoopNum(loopNum + 1);
+      setIndex(1);
+      setDelta(500);
+    } else {
+      setIndex((prevIndex) => prevIndex + 1);
+    }
+  };
+
   return (
-    <div className="md:px-10 px-7 my-14 md:h-screen bg-[#1a1a29]" id="home">
-      <div>
-        <div className="flex flex-col md:flex-row items-center justify-between w-full">
-          {/* Text content */}
-          <div className="text-white">
-            <motion.h6
-              variants={fadeIn("up", 0.3)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: false, amount: 0.5 }} // Adjusted viewport settings
-              className="text-3xl mt-10"
-            >
-              Hello, I'm
-            </motion.h6>
-            <motion.h1
-              variants={fadeIn("up", 0.4)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: false, amount: 0.5 }} // Adjusted viewport settings
-              className="font-semibold md:text-5xl my-4 text-3xl"
-            >
-              Tahmida Jakia
-            </motion.h1>
-            <h1 className="text-2xl md:text-3xl font-semibold mb-4 md:mb-8">
-              <TypeAnimation
-                sequence={[
-                  "Web Developer",
-                  2000,
-                  "",
-                  1000,
-                  "Web Developer",
-                  2000,
-                ]}
-                speed={50}
-                wrapper="span"
-                repeat={Infinity}
-              />
-            </h1>
-            <motion.p
-              variants={fadeIn("up", 0.5)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: false, amount: 0.5 }} // Adjusted viewport settings
-              className="md:w-96"
-            >
-              Based in Sylhet, Bangladesh. Having a high level of experience in
-              web development knowledge and building web and mobile applications
-              with JavaScript, React, Node.js, and other libraries and
-              frameworks.
-            </motion.p>
+    <section
+      className="banner bg-cover bg-center bg-no-repeat bg-gray-900 text-white py-32 sm:py-24 md:py-32"
+      style={{ backgroundImage: `url(${bannerBg})` }}
+      id="home"
+    >
+      <div className="container mx-auto px-4 mt-16">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-44">
+          <div className="w-full md:w-1/2">
+            <TrackVisibility>
+              {({ isVisible }) => (
+                <div className="ml-14 pr-7">
+                  <div
+                    className={
+                      isVisible ? "animate__animated animate__fadeIn" : ""
+                    }
+                  >
+                    {/* Tagline with Gradient, Border, Padding */}
+                    <span className="inline-block text-xl font-bold text-gray-200 bg-gradient-to-r from-[#632a5f] to-[#39236c] bg-opacity-50 border border-white/50 px-4 py-2 mb-4 tracking-tight">
+                      Welcome to my Portfolio
+                    </span>
 
-            {/* Social Media Icons */}
-            <motion.div
-              variants={fadeIn("up", 0.6)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: false, amount: 0.5 }} // Adjusted viewport settings
-              className="flex gap-4 my-4"
-            >
-              <FaGithub className="text-white hover:text-purple-700 cursor-pointer" />
-              <FaFacebook className="text-white hover:text-purple-700 cursor-pointer" />
-              <FaLinkedin className="text-white hover:text-purple-700 cursor-pointer" />
-              <FaInstagram className="text-white hover:text-purple-700 cursor-pointer" />
-              <FaTwitter className="text-white hover:text-purple-700 cursor-pointer" />
-            </motion.div>
+                    <h1 className="text-4xl md:text-6xl font-semibold mt-2">
+                      {`Hi! I'm Tahmida Jakia`}{" "}
+                      <span
+                        className="txt-rotate inline-block font-bold"
+                        dataPeriod="1000"
+                        data-rotate='[ "Web Developer", "Web Developer", "Web Developer" ]'
+                      >
+                        <span className="wrap">{text}</span>
+                      </span>
+                    </h1>
 
-            {/* CV Download Button */}
-            {/* <motion.div
-              variants={fadeIn("up", 0.7)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: false, amount: 0.5 }} // Adjusted viewport settings
-              className="mt-5"
-            >
-              <button className="mt-6 btn transition-all duration-500 bg-purple-700 py-2 px-4 rounded text-white hover:bg-white hover:text-purple-700 flex items-center gap-2">
-                <a
-                  href={resume}
-                  download="Resume"
-                  className="flex items-center gap-2"
-                >
-                  MY CV <FaDownload />
-                </a>
-              </button>
-            </motion.div> */}
+                    <p className="mt-4 text-lg md:text-xl text-gray-300">
+                      Based in Sylhet, Bangladesh. Having a high level of
+                      experience in web development knowledge and building web
+                      and mobile applications with JavaScript, React, Node.js,
+                      and some other cool libraries and frameworks.
+                    </p>
+
+                    <button
+                      onClick={() => console.log("connect")}
+                      className="mt-6 inline-flex items-center px-6 py-2 border-2 border-white rounded-full text-white hover:bg-white hover:text-gray-900 transition-all"
+                    >
+                      Let’s Connect{" "}
+                      <ArrowRightCircle className="ml-2" size={25} />
+                    </button>
+                  </div>
+                </div>
+              )}
+            </TrackVisibility>
           </div>
 
-          {/* Image */}
-          <motion.div
-            variants={fadeIn("down", 0.5)}
-            initial="hidden"
-            whileInView="show"
-            className="order-first md:order-last relative"
-          >
-            <img
-              src={img2}
-              alt="Profile"
-              className="data-aos-fade-left" // Temporarily removed AOS attributes to test framer-motion
-            />
-          </motion.div>
+          {/* Image Section */}
+          <div className="w-full md:w-1/2 mt-12 md:mt-0">
+            <TrackVisibility>
+              {({ isVisible }) => (
+                <div
+                  className={
+                    isVisible ? "animate__animated animate__zoomIn" : ""
+                  }
+                >
+                  <img
+                    src={headerImg}
+                    alt="Header Img"
+                    className="w-full max-w-[500px] h-auto rounded-lg shadow-lg mx-auto"
+                  />
+                </div>
+              )}
+            </TrackVisibility>
+          </div>
         </div>
       </div>
-      <div className="h-24 bg-[#181824] w-full mx-auto absolute left-0 hidden md:block"></div>
-    </div>
+    </section>
   );
 };
 
